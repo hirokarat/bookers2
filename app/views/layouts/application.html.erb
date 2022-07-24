@@ -30,13 +30,31 @@
                 <% if user_signed_in? %>
                 
                 <li class="nav-link text-light">
-                  <%= link_to 'マイページ', user_path(current_user.id), class: 'nav-link text-light' %>
+                  <%= link_to user_path(current_user.id), class: 'nav-link text-light' do %>
+                  <i class="fa-solid fa-house-chimney"></i>
+                  Home
+                  <%end%>
                 </li>
+                
                 <li class="nav-link text-light">
-                  <%= link_to '投稿フォーム', new_book_path, class: 'nav-link text-light' %>
+                  <%= link_to users_path, class: 'nav-link text-light' do%>
+                  <i class="fa-solid fa-users"></i>
+                  Users
+                  <%end%>
                 </li>
+                
+                <li>
+                  <%= link_to books_path, class: 'nav-link text-light' do %>
+                  <i class="fa-solid fa-book-open"></i>
+                  Books
+                  <%end%>
+                </li>
+                
                 <li class="nav-link text-light">
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link text-light' %>
+                  <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-light' do %>
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  Log out
+                  <%end%>
                 </li>
                
                 <% else %>

@@ -1,7 +1,7 @@
 <p id=notice></p>
 <div class="container px-5 px-sm-0">
   <div class="row">
-    
+   
     <%= render'list',book:@book,user:@user%>
       
     <div class="col-md-8 offset-md-1">
@@ -15,10 +15,10 @@
             <th colspan="3"></th>
           </tr>
         </thead>
+        
+        <% @books.each do |book| %>
         <tbody>
-         
           <tr>
-            <% @books.each do |book| %>
             <td></td>
             <td>
               <%= link_to book_path(book.id) do %>
@@ -26,9 +26,9 @@
               <%end%>
             </td>
             <td><%= book.body %></td>
-            <%end%>
           </tr>
         </tbody>
+        <%end%>
       </table>
     </div>
 

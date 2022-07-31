@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    
+
      <header>
        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
          <div class="container">
@@ -23,67 +23,67 @@
                    aria-expanded="false" aria-label="Toggle navigation">
              <span class="navbar-toggler-icon"></span>
            </button>
-           
+
            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-           
+
               <ul class="navbar-nav ml-auto">
                 <% if user_signed_in? %>
-                
+
                 <li class="nav-link text-light">
                   <%= link_to user_path(current_user.id), class: 'nav-link text-light' do %>
-                  <i class="fa-solid fa-house-chimney"></i>
+                  <i class="fas fa-home"></i>
                   Home
                   <%end%>
                 </li>
-                
+
                 <li class="nav-link text-light">
                   <%= link_to users_path, class: 'nav-link text-light' do%>
-                  <i class="fa-solid fa-users"></i>
+                  <i class="fas fa-users"></i>
                   Users
                   <%end%>
                 </li>
-                
+
                 <li class="nav-link text-lisht">
                   <%= link_to books_path, class: 'nav-link text-light' do %>
-                  <i class="fa-solid fa-book-open"></i>
+                  <i class="fas fa-book-open"></i>
                   Books
                   <%end%>
                 </li>
-                
+
                 <li class="nav-link text-light">
                   <%= link_to destroy_user_session_path, method: :delete, class: 'nav-link text-light' do %>
-                  <i class="fa-solid fa-right-from-bracket"></i>
+                  <i class="fas fa-sign-out-alt"></i>
                   Log out
                   <%end%>
                 </li>
-               
+
                 <% else %>
-             
+
                 <li class="nav-link text-light">
                   <%= link_to "/",class: 'nav-link text-light' do%>
-                  <i class="fa-solid fa-house-chimney"></i>
+                  <i class="fas fa-home"></i>
                   Home
                   <%end%>
                 </li>
-               
-                
+
+
                 <li class="nav-link text-light">
                   <%= link_to about_path, class: 'nav-link text-light' do %>
-                  <i class="fa-solid fa-link"></i>
+                  <i class="fas fa-link"></i>
                   About
                   <%end%>
                 </li>
-                
+
                 <li class="nav-link text-light">
                   <%= link_to new_user_registration_path, class: 'nav-link text-light' do%>
-                  <i class="fa-solid fa-user-plus"></i>
+                  <i class="fas fa-user-plus"></i>
                   Sign up
                   <%end%>
                 </li>
-                
+
                 <li class="nav-link text-light">
                   <%= link_to new_user_session_path, class: 'nav-link text-light' do%>
-                  <i class="fa-solid fa-right-to-bracket"></i>
+                  <i class="fas fa-sign-in-alt"></i>
                   Log in
                   <%end%>
                 </li>
@@ -93,26 +93,26 @@
           </div>
         </nav>
       </header>
-    
-    
-   
+
+
+
     <%flash.each do |message_type, message|%>
     <%= content_tag :div, message, class: message_type %>
     <%end%>
-    
+
     <%= yield %>
-    
+
     <footer>
       <div class="container mt-5">
         <div class="row">
         <div class="mx-auto">
           <p>CopyRight Infratop.inc</p>
-        </div>  
+        </div>
         </div>
       </div>
     </footer>
-    
+
   </body>
-  
-  
+
+
 </html>
